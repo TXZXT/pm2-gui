@@ -45,7 +45,7 @@ function login() {
       if (res.error) {
         return info(res.error);
       } else {
-        window.location.href = '/';
+        window.location.href = '/processes/';
       }
     }
   });

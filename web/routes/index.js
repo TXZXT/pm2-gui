@@ -1,10 +1,10 @@
 var _ = require('lodash')
 var Monitor = require('../../lib/monitor')
-
+var baseUrl = '/processes'
 // Authorization
 action(function auth (req, res) {
   if (!req._config.agent || (req._config.agent.authorization === req.session['authorization'])) {
-    return res.redirect('/')
+    return res.redirect(baseUrl + '/')
   }
   res.render('auth', {
     title: 'Authorization'
@@ -14,7 +14,7 @@ action(function auth (req, res) {
 // Index
 action(function (req, res) {
   if (req._config.agent && (req._config.agent.authorization !== req.session['authorization'])) {
-    return res.redirect('/auth')
+    return res.redirect(baseUrl + '/auth')
   }
   var options = _.clone(req._config)
   var q = Monitor.available(_.extend(options, {

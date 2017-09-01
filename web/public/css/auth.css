@@ -9,7 +9,7 @@ body {
   letter-spacing: 0.5px;
   height: 100%;
   -webkit-text-size-adjust: none;
-  background: transparent url(/img/carbon.png) 0 0 repeat;
+  background: transparent url(/processes/img/carbon.png) 0 0 repeat;
 }
 
 .load {
